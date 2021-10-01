@@ -1,0 +1,74 @@
+import matplotlib.pyplot as plt
+import numpy as np
+#to represent change in x axis
+plt.title("change in x")
+x1 = np.random.randint(low=1,high=60,size=5)
+print(x1)
+y1 = np.random.randint(low=1,high=180,size=5)
+print(y1)
+plt.bar(x1,y1)
+plt.xlabel("time",fontsize=14)
+plt.ylabel("change in x axis in degrees",fontsize=14)
+plt.grid()
+plt.show()
+#to represent change in y axis
+plt.title("change in y")
+x2 = np.random.randint(low=1,high=60,size=5)
+print(x2)
+y2 = np.random.randint(low=1,high=180,size=5)
+print(y2)
+plt.bar(x2,y2)
+plt.xlabel("time",fontsize=14)
+plt.ylabel("change in y axis in degrees",fontsize=14)
+plt.grid()
+plt.show()
+#to represent change in z axis
+plt.title("change in z")
+x3 = np.random.randint(low=1,high=60,size=5)
+print(x3)
+y3 = np.random.randint(low=1,high=180,size=5)
+print(y3)
+plt.bar(x3,y3)
+plt.xlabel("time",fontsize=14)
+plt.ylabel("change in z axis in degrees",fontsize=14)
+plt.grid()
+plt.show()
+
+r1=x1/y1
+r2=x2/y2
+r3=x3/y3
+print("rate of change of x=",r1)
+print("rate of change of y=",r2)
+print("rate of change of z=",r3)
+
+print("Below diagrams represent rate of change in the particular axis at an instant of time within a minute")
+la=np.array(['x1','x2','x3','x4','x5'])
+plt.pie(r1,labels=la,radius=1.5)
+plt.title("instantaneous change in x",fontsize=15,bbox={'facecolor':'0.8', 'pad':5})
+plt.legend(title="5 time instants",title_fontsize=10,fontsize=10)
+plt.show()
+
+la=np.array(['y1','y2','y3','y4','y5'])
+plt.pie(r2,labels=la,radius=1.5)
+plt.title("instantaneous change in y",fontsize=15,bbox={'facecolor':'0.8', 'pad':5})
+plt.legend(title="5 time instants",title_fontsize=10,fontsize=10)
+plt.show()
+
+la=np.array(['z1','z2','z3','z4','z5'])
+plt.pie(r3,labels=la,radius=1.5)
+plt.title("instantaneous change in z",fontsize=15,bbox={'facecolor':'0.8', 'pad':5})
+plt.legend(title="5 time instants",title_fontsize=10,fontsize=10)
+plt.show()
+
+#comparision of changes between the axes
+x=np.sum(x1)/60
+y=np.sum(x2)/60
+z=np.sum(x3)/60
+
+print("total rate of change of x",x,"y",y,"z",z)
+xyz=np.array([x,y,z])
+label=np.array(['x','y','z'])
+plt.pie(xyz,labels=label,radius=1.5)
+plt.title("relative change in axis in a minute",fontsize=15,bbox={'facecolor':'0.8', 'pad':5})
+plt.legend(title="3 axis:",title_fontsize=15,fontsize=15)
+plt.show()
